@@ -1,4 +1,4 @@
-import urllib, urllib2
+import urllib2
 import json
 
 class MailSnake(object):
@@ -20,7 +20,7 @@ class MailSnake(object):
         url = self.base_api_url + method
         params.update(self.default_params)
 
-        post_data = urllib.urlencode(params)
+        post_data = json.dumps(params)
         response = urllib2.urlopen(url, post_data)
 
         return json.loads(response.read())
