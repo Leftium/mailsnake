@@ -21,7 +21,9 @@ class MailSnake(object):
         params.update(self.default_params)
 
         post_data = json.dumps(params)
-        response = urllib2.urlopen(url, post_data)
+        headers = {'Content-Type': 'application/json'}
+        request = urllib2.Request(url, post_data, headers)
+        response = urllib2.urlopen(request)
 
         return json.loads(response.read())
 
