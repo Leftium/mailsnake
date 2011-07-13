@@ -23,7 +23,7 @@ class MailSnake(object):
         url = self.base_api_url + method
         params.update(self.default_params)
 
-        post_data = json.dumps(params)
+        post_data = urllib2.quote(json.dumps(params))
         headers = {'Content-Type': 'application/json'}
         request = urllib2.Request(url, post_data, headers)
         response = urllib2.urlopen(request)
