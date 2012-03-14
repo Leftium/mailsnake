@@ -21,9 +21,10 @@ class MailSnake(object):
 
     def call(self, method, params = {}):
         url = self.base_api_url + method
-        params.update(self.default_params)
+        all_params = self.default_params.copy()
+        all_params.update(params)
 
-        post_data = urllib2.quote(json.dumps(params))
+        post_data = urllib2.quote(json.dumps(all_params))
         headers = {'Content-Type': 'application/json'}
         request = urllib2.Request(url, post_data, headers)
         response = urllib2.urlopen(request)
