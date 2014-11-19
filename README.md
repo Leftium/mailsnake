@@ -18,5 +18,5 @@ Note
 
 MailChimp API v1.3 documentation
 ================================
-    http://www.mailchimp.com/api/1.3/
+http://www.mailchimp.com/api/1.3/
 
