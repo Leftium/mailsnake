@@ -1,5 +1,6 @@
-MailSnake Python wrapper for MailChimp API 1.3
-==============================================
+MailSnake 
+=========
+Python wrapper for MailChimp API 1.3
 
 Usage
 =====
